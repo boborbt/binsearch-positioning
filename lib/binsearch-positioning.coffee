@@ -12,15 +12,15 @@ module.exports = BinsearchPositioning =
     @subscriptions.add atom.commands.add 'atom-workspace',  'binsearch-positioning:moveRight': => @moveRight()
     @subscriptions.add atom.commands.add 'atom-workspace',  'binsearch-positioning:moveLeft': => @moveLeft()
 
-    @editor = atom.workspace.getActiveTextEditor()
-    @editorView = atom.views.getView(@editor)
-    @subscriptions.add @addEventListener 'keyup', (event) => @keyup(event)
+    @keyupHandler = (event) => @keyup(event)
 
-  addEventListener: (eventName, handler) ->
-    editorView = atom.views.getView @editor
-    editorView.addEventListener eventName, handler
-    new Disposable ->
-      @editor.removeEventListener eventName, handler
+  addEventListener: (editor)->
+    editorView = atom.views.getView(editor)
+    editorView.addEventListener "keyup", @keyupHandler
+
+  removeEventListener: (editor)->
+    editorView = atom.views.getView(editor)
+    editorView.removeEventListener "keyup", @keyupHandler
 
   deactivate: ->
     @subscriptions.dispose()
@@ -31,15 +31,19 @@ module.exports = BinsearchPositioning =
     if event.key == "Control"
       @boundLeft = null
       @boundRight = null
+      @removeEventListener(@editor)
 
   checkBounds: ->
     # console.log("left:" + @boundLeft + " right:" + @boundRight)
     if @boundLeft == null
+      @editor = atom.workspace.getActiveTextEditor()
       position = @editor.getCursorBufferPosition()
       lineLength = @editor.lineTextForBufferRow(position.row).length
 
       @boundLeft = 0
       @boundRight = lineLength
+
+      @addEventListener(@editor)
 
   moveRight: ->
     @checkBounds()
