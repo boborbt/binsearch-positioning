@@ -12,7 +12,10 @@
       "atom-workspace": "binsearch-positioning:moveLeft"
     }
   ],
-  "repository": "github:boborbt/binsearch-positioning",
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:boborbt/binsearch-positioning.git"
+    },
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
