@@ -1,0 +1,27 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle binsearch-positioning'
+      'command': 'binsearch-positioning:left'
+      'command': 'binsearch-positioning:right'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'binsearch-positioning'
+      'submenu': [
+        {
+          'label': 'left'
+          'command': 'binsearch-positioning:left'
+        }
+        {
+          'label': 'right'
+          'command' : 'binsearch-positioning:right'
+        }
+      ]
+    ]
+  }
+]
