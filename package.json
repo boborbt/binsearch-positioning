@@ -1,7 +1,7 @@
 {
   "name": "binsearch-positioning",
   "main": "./lib/binsearch-positioning",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Introduces commands to position the cursor in a line using a binary search approach.",
   "keywords": [],
   "activationCommands": [
