@@ -34,7 +34,6 @@ module.exports = BinsearchPositioning =
       @removeEventListener(@editor)
 
   checkBounds: ->
-    # console.log("left:" + @boundLeft + " right:" + @boundRight)
     if @boundLeft == null
       @editor = atom.workspace.getActiveTextEditor()
       position = @editor.getCursorBufferPosition()
