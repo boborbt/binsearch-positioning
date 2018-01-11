@@ -7,6 +7,7 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
-'atom-workspace':
-  'ctrl->': 'binsearch-positioning:moveRight'
-  'ctrl-<': 'binsearch-positioning:moveLeft'
+
+'atom-text-editor':
+  'ctrl-alt-right': 'binsearch-positioning:moveRight'
+  'ctrl-alt-left': 'binsearch-positioning:moveLeft'

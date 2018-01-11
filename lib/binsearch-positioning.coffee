@@ -8,7 +8,6 @@ module.exports = BinsearchPositioning =
   activate: (state) ->
     @subscriptions = new CompositeDisposable
 
-    # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace',  'binsearch-positioning:moveRight': => @moveRight()
     @subscriptions.add atom.commands.add 'atom-workspace',  'binsearch-positioning:moveLeft': => @moveLeft()
 
@@ -24,8 +23,6 @@ module.exports = BinsearchPositioning =
 
   deactivate: ->
     @subscriptions.dispose()
-
-  # serialize: ->
 
   keyup: (event) ->
     if event.key == "Control"
