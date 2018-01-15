@@ -6,8 +6,8 @@ It introduces two commands `moveLeft` and `moveRight` allowing one to move insid
 
 ## Key bindings
 
-- `ctr-<` will move the custor towards the left of the line (halfway distance between the current position and the last used position on that side);
-- `ctr->` will move the custor towards the right of the line (halfway distance between the current position and the last used position on that side);
+- `ctr-alt-left` will move the custor towards the left of the line (halfway distance between the current position and the last used position on that side);
+- `ctr-alt-right` will move the custor towards the right of the line (halfway distance between the current position and the last used position on that side);
 
 ## Issues
 
